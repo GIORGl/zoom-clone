@@ -29,7 +29,7 @@ function Header() {
        </div>
          <div className="header__right">
          
-            <input className="header__input" type="text"/>
+            <input placeholder=' search' className="header__input" type="text"/>
         
 <Avatar className="header__avatar" />
        </div>
