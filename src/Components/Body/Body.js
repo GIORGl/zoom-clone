@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import './Body.css';
 function Body() {
     
     const [input,setInput] = useState('')
-    const date = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-    useEffect(() => {
+    const [input2,setInput2] = useState('')
+    setInterval(() => {
+        const date = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        const date2 = new Date().toDateString();
         setInput(date);
-    },[date])
+        setInput2(date2)
+    }, 600);
     return (
         <div className='body'>
-   
  <div className="body__left">
      <div className="body__row">
      <div className="body__comp">
@@ -36,13 +38,16 @@ function Body() {
  
  </div>
  <div className="body__right">
-    <div  className="background__image">
-   {input}
-    </div>
+   <div className="background__image">
+       <h1>{input}</h1>
+      <p> {input2}</p>
+   </div>
+   <div className='body__rightText'>
+       No upcoming meeting today
+   </div>
  </div>
-        </div>
-
-
+ 
+     </div>
     )
 }
 
